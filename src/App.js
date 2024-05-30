@@ -3,6 +3,9 @@ import './App.css';
 import React from 'react';
 import { InboxOutlined } from '@ant-design/icons';
 import { message, Upload } from 'antd';
+
+
+
 const { Dragger } = Upload;
 const props = {
   name: 'file',
@@ -26,6 +29,7 @@ const props = {
 
 
 const App = () => (
+  <div id='box'>
   <Dragger {...props}>
     <p className="ant-upload-drag-icon">
       <InboxOutlined />
@@ -36,5 +40,7 @@ const App = () => (
       banned files.
     </p>
   </Dragger>
+  </div>
 );
+
 export default App;

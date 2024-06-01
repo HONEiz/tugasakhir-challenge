@@ -7,17 +7,22 @@ const Laporan = ()=>{
     
     return (
         <div id='Laporan'>
+            <p>Pilih data : </p>
             <Select
-                defaultValue="A1"
+                defaultValue="A1A"
                 style={{
                     width: 120,
                 }}
                 onChange={handleChange}
                 options={[
                     {
-                    value: 'A1',
-                    label: 'A1',
+                    value: 'A1A',
+                    label: 'A1A',
                     },
+                    {
+                        value: 'A1B',
+                        label: 'A1B',
+                        },
                     {
                     value: 'A2',
                     label: 'A2',
@@ -60,7 +65,7 @@ const Laporan = ()=>{
                     }
                  ]}
             />
-            <Table></Table>
+            <Table virtual scroll={{ x: 2000, y: 500 }}></Table>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Space, Upload } from 'antd';
-import { Children, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { read, utils } from 'xlsx';
 import { Table, Select } from "antd";
 
@@ -1066,12 +1066,6 @@ const Main = () => {
         return false;
     };
 
-    const handleDrop = ()=>{
-        setDatas({})
-
-        return;
-    }
-
     return (
         <>
             <Space
@@ -1087,7 +1081,7 @@ const Main = () => {
                     maxCount={1}
                     accept='.xlsx'
                     beforeUpload={handleUpload}
-                    onDrop={handleDrop}
+                    showUploadList={{showRemoveIcon:false}}
                 >
                     <Button icon={<UploadOutlined />}>Upload di sini</Button>
                 </Upload>

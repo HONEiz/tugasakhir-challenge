@@ -11,6 +11,7 @@ const Main = () => {
     const [dataChosen, setDataChosen] = useState('A1A');
     const [showTotal, setShowTotal] = useState(true);
 
+    //mengisi kolom kolom pada table yang di tampilkan
     const tableColumns = {
         A1A: [
             {
@@ -1008,11 +1009,12 @@ const Main = () => {
 
     }
 
-
+    //method-method untuk mendapatkan data tabel yang ingin di baca
     const getDataA1A = async (rawData) => {
         const hasil = [];
         const tempA1A = rawData.A1A;
 
+        //loop dengan mengambil kolom kolom tertentu sesuai urutannya pada excel sheet
         for (let i = 1; i < tempA1A.length; i++) {
             hasil.push({
                 key: i,
@@ -1281,9 +1283,11 @@ const Main = () => {
         return hasil;
     }
 
+    //message untuk menampilkan bila terjadi error
     const [messageApi, contextHolder] = message.useMessage();
 
 
+    //method untuk menentukan apakah table total dimasukkan atau tidak
     const getTotal = () => {
         let Total = <></>
         if (showTotal === true) {
@@ -1296,13 +1300,17 @@ const Main = () => {
         return Total;
 
     }
+
+    //method untuk menangani jika terjadi upload
     const handleUpload = async (file) => {
+        //mengambil file input lalu dijadikan nested array
         const ab = await file.arrayBuffer();
         const wb = read(ab);
         const ws = wb.Sheets[wb.SheetNames[0]];
 
         const data = utils.sheet_to_json(ws, { header: 1 });
 
+        //pengecekan format file excel
         if (data[0][1] !== "BIDANG A: PENDIDIKAN \r\nDAN PENGAJARAN" || data[9][1] !== 'A1A' || data[186][1] !== 'A11') {
             messageApi.open({
                 type: 'error',
@@ -1311,8 +1319,9 @@ const Main = () => {
             return;
         }
 
-        console.log(data);
+        // console.log(data);
 
+        //mengambil data dari raw, menjadi terpisah pisah sesuai dengan bagiannya
         let tempData = {
             // A1A
             A1A: data.slice(12, 38),
@@ -1340,6 +1349,7 @@ const Main = () => {
             A11: data.slice(190, 201),
         };
 
+        //memasukkan data-data
         const dataA1A = await getDataA1A(tempData)
         const dataA1B = await getDataA1B(tempData)
         const dataA2 = await getDataA2(tempData)

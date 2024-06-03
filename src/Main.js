@@ -723,7 +723,288 @@ const Main = () => {
                 dataIndex: 'angkaKredit',
                 key: 'angkaKredit',
             }
-        ]
+        ],
+        totalA1A: [
+            {
+                title: 'TOTAL',
+                children: [
+                    {
+                        title: 'Rencana Beban sks',
+                        dataIndex: 'rencanaBebanSKS',
+                        key: 'rencanaBebanSKS',
+                        align: 'center'
+                    },
+                    {
+                        title: 'sks realisasi',
+                        dataIndex: 'sksRealisasi',
+                        key: 'sksRealisasi',
+                        align: 'center'
+                    },
+                    {
+                        title: 'sks BKD (Dikti)',
+                        dataIndex: 'sksBKD',
+                        key: 'sksBKD',
+                        align: 'center'
+                    },
+                    {
+                        title: 'Angka Kredit (JFAD)',
+                        dataIndex: 'angkaKredit',
+                        key: 'angkaKredit',
+                        align: 'center'
+                    },
+                ]
+            }
+        ],
+        totalA1B: [{
+            title: 'TOTAL',
+            children: [
+                {
+                    title: 'sks UNPAR',
+                    dataIndex: 'sksUNPAR',
+                    key: 'sksUNPAR',
+                    align: 'center'
+                },
+                {
+                    title: 'sks BKD (Dikti)',
+                    dataIndex: 'sksBKD',
+                    key: 'sksBKD',
+                    align: 'center'
+                },
+                {
+                    title: 'Angka Kredit (JFAD)',
+                    dataIndex: 'angkaKredit',
+                    key: 'angkaKredit',
+                    align: 'center'
+                },
+
+            ]
+        }
+        ],
+        totalA2: [{
+            title: 'TOTAL',
+            children: [
+                {
+                    title: 'sks UNPAR',
+                    dataIndex: 'sksUNPAR',
+                    key: 'sksUNPAR',
+                    align: 'center'
+                },
+                {
+                    title: 'sks BKD (Dikti)',
+                    dataIndex: 'sksBKD',
+                    key: 'sksBKD',
+                    align: 'center'
+                },
+                {
+                    title: 'Angka Kredit (JFAD)',
+                    dataIndex: 'angkaKredit',
+                    key: 'angkaKredit',
+                    align: 'center'
+                },
+
+            ]
+        }
+        ],
+        totalA3: [{
+            title: 'TOTAL',
+            children: [
+                {
+                    title: 'sks (UNPAR)',
+                    dataIndex: 'sksUNPAR',
+                    key: 'sksUNPAR',
+                    align: 'center'
+                },
+                {
+                    title: 'sks BKD (Dikti)',
+                    dataIndex: 'sksBKD',
+                    key: 'sksBKD',
+                    align: 'center'
+                },
+                {
+                    title: 'Angka Kredit (JFAD)',
+                    dataIndex: 'angkaKredit',
+                    key: 'angkaKredit',
+                    align: 'center'
+                },
+
+            ]
+        }
+        ],
+        totalA4: [{
+            title: 'TOTAL',
+            children: [
+                {
+                    title: 'sks (UNPAR)',
+                    dataIndex: 'sksUNPAR',
+                    key: 'sksUNPAR',
+                    align: 'center'
+                },
+                {
+                    title: 'sks BKD (Dikti)',
+                    dataIndex: 'sksBKD',
+                    key: 'sksBKD',
+                    align: 'center'
+                },
+                {
+                    title: 'Angka Kredit (JFAD)',
+                    dataIndex: 'angkaKredit',
+                    key: 'angkaKredit',
+                    align: 'center'
+                },
+
+            ]
+        }
+        ],
+        totalA5: [{
+            title: 'TOTAL',
+            children: [
+                {
+                    title: 'sks (UNPAR)',
+                    dataIndex: 'sksUNPAR',
+                    key: 'sksUNPAR',
+                    align: 'center'
+                },
+                {
+                    title: 'sks BKD (Dikti)',
+                    dataIndex: 'sksBKD',
+                    key: 'sksBKD',
+                    align: 'center'
+                },
+                {
+                    title: 'Angka Kredit (JFAD)',
+                    dataIndex: 'angkaKredit',
+                    key: 'angkaKredit',
+                    align: 'center'
+                },
+
+            ]
+        }
+        ],
+        totalA6: [
+            {
+                title: 'TOTAL',
+                children: [
+                    {
+                        title: 'sks (UNPAR)',
+                        dataIndex: 'sksUNPAR',
+                        key: 'sksUNPAR',
+                        align: 'center'
+                    },
+                    {
+                        title: 'sks BKD (Dikti)',
+                        dataIndex: 'sksBKD',
+                        key: 'sksBKD',
+                        align: 'center'
+                    },
+                    {
+                        title: 'Angka Kredit (JFAD)',
+                        dataIndex: 'angkaKredit',
+                        key: 'angkaKredit',
+                        align: 'center'
+                    },
+
+                ]
+            }
+        ],
+        totalA8: [
+            {
+                title: 'TOTAL',
+                children: [
+                    {
+                        title: 'sks (UNPAR)',
+                        dataIndex: 'sksUNPAR',
+                        key: 'sksUNPAR',
+                        align: 'center'
+                    },
+                    {
+                        title: 'sks BKD (Dikti)',
+                        dataIndex: 'sksBKD',
+                        key: 'sksBKD',
+                        align: 'center'
+                    },
+                    {
+                        title: 'Angka Kredit (JFAD)',
+                        dataIndex: 'angkaKredit',
+                        key: 'angkaKredit',
+                        align: 'center'
+                    },
+
+                ]
+            }
+        ],
+        totalA9: [
+            {
+                title: 'TOTAL',
+                children: [
+                    {
+                        title: 'sks (UNPAR)',
+                        dataIndex: 'sksUNPAR',
+                        key: 'sksUNPAR',
+                        align: 'center'
+                    },
+                    {
+                        title: 'sks BKD (Dikti)',
+                        dataIndex: 'sksBKD',
+                        key: 'sksBKD',
+                        align: 'center'
+                    },
+                    {
+                        title: 'Angka Kredit (JFAD)',
+                        dataIndex: 'angkaKredit',
+                        key: 'angkaKredit',
+                        align: 'center'
+                    },
+
+                ]
+            }
+        ],
+        totalA10: [{
+            title: 'TOTAL',
+            children: [
+                {
+                    title: 'sks (UNPAR)',
+                    dataIndex: 'sksUNPAR',
+                    key: 'sksUNPAR',
+                },
+                {
+                    title: 'sks BKD (Dikti)',
+                    dataIndex: 'sksBKD',
+                    key: 'sksBKD',
+                },
+                {
+                    title: 'Angka Kredit (JFAD)',
+                    dataIndex: 'angkaKredit',
+                    key: 'angkaKredit',
+                },
+
+            ]
+        }
+        ],
+        totalA11: [{
+            title: 'TOTAL',
+            children: [
+                {
+                    title: 'sks (UNPAR)',
+                    dataIndex: 'sksUNPAR',
+                    key: 'sksUNPAR',
+                    align: 'center'
+                },
+                {
+                    title: 'sks BKD (Dikti)',
+                    dataIndex: 'sksBKD',
+                    key: 'sksBKD',
+                    align: 'center'
+                },
+                {
+                    title: 'Angka Kredit (JFAD)',
+                    dataIndex: 'angkaKredit',
+                    key: 'angkaKredit',
+                    align: 'center'
+                },
+
+            ]
+        }
+        ],
 
     }
 
@@ -1002,6 +1283,19 @@ const Main = () => {
 
     const [messageApi, contextHolder] = message.useMessage();
 
+
+    const getTotal = () => {
+        let Total = <></>
+        if (showTotal === true) {
+            Total = <Table columns={tableColumns['total' + dataChosen]} dataSource={datas['total' + dataChosen]}></Table>
+        }
+        else {
+            Total = <></>
+        }
+
+        return Total;
+
+    }
     const handleUpload = async (file) => {
         const ab = await file.arrayBuffer();
         const wb = read(ab);
@@ -1059,6 +1353,83 @@ const Main = () => {
         const dataA10 = await getDataA10(tempData)
         const dataA11 = await getDataA11(tempData)
 
+        const dataTotalA1A = [{
+            key: 'A1A',
+            rencanaBebanSKS: tempData.A1A[0][17],
+            sksRealisasi: tempData.A1A[0][20],
+            sksBKD: tempData.A1A[0][21],
+            angkaKredit: tempData.A1A[0][22],
+        }];
+
+        const dataTotalA1B = [{
+            key: 'A1B',
+            sksUNPAR: tempData.A1B[0][17],
+            sksBKD: tempData.A1B[0][19],
+            angkaKredit: tempData.A1B[0][20],
+        }];
+
+        const dataTotalA2 = [{
+            key: 'A2',
+            sksUNPAR: tempData.A2[0][17],
+            sksBKD: tempData.A2[0][19],
+            angkaKredit: tempData.A2[0][20],
+        }];
+
+        const dataTotalA3 = [{
+            key: 'A3',
+            sksUNPAR: tempData.A3[0][17],
+            sksBKD: tempData.A3[0][19],
+            angkaKredit: tempData.A3[0][20],
+        }];
+
+        const dataTotalA4 = [{
+            key: 'A4',
+            sksUNPAR: tempData.A4[0][17],
+            sksBKD: tempData.A4[0][19],
+            angkaKredit: tempData.A4[0][20],
+        }];
+        const dataTotalA5 = [{
+            key: 'A5',
+            sksUNPAR: tempData.A5[0][17],
+            sksBKD: tempData.A5[0][19],
+            angkaKredit: tempData.A5[0][20],
+        }];
+
+        const dataTotalA6 = [{
+            key: 'A6',
+            sksUNPAR: tempData.A6[0][17],
+            sksBKD: tempData.A6[0][19],
+            angkaKredit: tempData.A6[0][20],
+        }];
+
+        const dataTotalA8 = [{
+            key: 'A8',
+            sksUNPAR: tempData.A8[0][17],
+            sksBKD: tempData.A8[0][19],
+            angkaKredit: tempData.A8[0][20],
+        }];
+
+        const dataTotalA9 = [{
+            key: 'A9',
+            sksUNPAR: tempData.A9[0][17],
+            sksBKD: tempData.A9[0][19],
+            angkaKredit: tempData.A9[0][20],
+        }];
+
+        const dataTotalA10 = [{
+            key: 'A10',
+            sksUNPAR: tempData.A10[0][17],
+            sksBKD: tempData.A10[0][19],
+            angkaKredit: tempData.A10[0][20],
+        }];
+
+        const dataTotalA11 = [{
+            key: 'A11',
+            sksUNPAR: tempData.A11[0][17],
+            sksBKD: tempData.A11[0][19],
+            angkaKredit: tempData.A11[0][20],
+        }];
+
         const finalData = {
             A1A: dataA1A,
             A1B: dataA1B,
@@ -1071,7 +1442,18 @@ const Main = () => {
             A8: dataA8,
             A9: dataA9,
             A10: dataA10,
-            A11: dataA11
+            A11: dataA11,
+            totalA1A: dataTotalA1A,
+            totalA1B: dataTotalA1B,
+            totalA2: dataTotalA2,
+            totalA3: dataTotalA3,
+            totalA4: dataTotalA4,
+            totalA5: dataTotalA5,
+            totalA6: dataTotalA6,
+            totalA8: dataTotalA8,
+            totalA9: dataTotalA9,
+            totalA10: dataTotalA10,
+            totalA11: dataTotalA11
         }
 
         setDatas(finalData);
@@ -1079,13 +1461,8 @@ const Main = () => {
         return false;
     };
 
-    let Total = <></>
-    if(showTotal === true){
-        Total = <Table columns = {tableColumns[dataChosen]} dataSource={datas[dataChosen]}></Table>
-    }
-    else{
-        Total = <></>
-    }
+    let Total = getTotal();
+
 
     return (
         <>
@@ -1120,7 +1497,7 @@ const Main = () => {
                     }}
                     onChange={(value) => {
                         setDataChosen(value);
-                        if (dataChosen === 'A7') {
+                        if (value === 'A7') {
                             setShowTotal(false);
                         }
                         else {
@@ -1178,9 +1555,10 @@ const Main = () => {
                         }
                     ]}
                 />
-                
-                {Total}
-                <Table columns={tableColumns[dataChosen]} dataSource={datas[dataChosen]} bordered virtual scroll={{ x: 700, y: 500 }}></Table>
+                <div id='tables'>
+                    {Total}
+                    <Table columns={tableColumns[dataChosen]} dataSource={datas[dataChosen]} bordered virtual scroll={{ x: 700, y: 500 }}></Table>
+                </div>
             </div>
         </>
     )

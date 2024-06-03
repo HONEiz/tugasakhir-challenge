@@ -2,13 +2,14 @@ import { UploadOutlined } from '@ant-design/icons';
 import { Button, Space, Upload } from 'antd';
 import { useState } from 'react';
 import { read, utils } from 'xlsx';
-import { Table, Select } from "antd";
+import { Table, Select, message } from "antd";
 
 
 
 const Main = () => {
     const [datas, setDatas] = useState({});
     const [dataChosen, setDataChosen] = useState('A1A');
+    const [showTotal, setShowTotal] = useState(true);
 
     const tableColumns = {
         A1A: [
@@ -733,7 +734,7 @@ const Main = () => {
 
         for (let i = 1; i < tempA1A.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: tempA1A[i][1],
                 kategoriKegiatan: tempA1A[i][2],
                 kode: tempA1A[i][5],
@@ -762,7 +763,7 @@ const Main = () => {
 
         for (let i = 1; i < tempA1B.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: tempA1B[i][1],
                 kategoriKegiatan: tempA1B[i][2],
                 kode: tempA1B[i][5],
@@ -786,7 +787,7 @@ const Main = () => {
 
         for (let i = 1; i < tempA2.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: tempA2[i][1],
                 kategoriKegiatan: tempA2[i][2],
                 jmlMhsPerKls: tempA2[i][5],
@@ -808,7 +809,7 @@ const Main = () => {
 
         for (let i = 1; i < temp.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: temp[i][1],
                 kategoriKegiatan: temp[i][2],
                 jmlMhs: temp[i][5],
@@ -830,7 +831,7 @@ const Main = () => {
 
         for (let i = 1; i < temp.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: temp[i][1],
                 kategoriKegiatan: temp[i][2],
                 jmlMhs: temp[i][5],
@@ -853,7 +854,7 @@ const Main = () => {
 
         for (let i = 1; i < temp.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: temp[i][1],
                 kategoriKegiatan: temp[i][2],
                 namaPengembangan: temp[i][5],
@@ -874,7 +875,7 @@ const Main = () => {
 
         for (let i = 1; i < temp.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: temp[i][1],
                 jdlOrasi: temp[i][2],
                 tingkat: temp[i][8],
@@ -896,7 +897,7 @@ const Main = () => {
 
 
         hasil.push({
-            key:1,
+            key: 1,
             no: temp[1],
             kategoriKegiatan: temp[2],
             desk: temp[5],
@@ -914,8 +915,8 @@ const Main = () => {
 
         for (let i = 1; i < temp.length; i++) {
             hasil.push({
-                
-                key:i,
+
+                key: i,
                 no: temp[i][1],
                 kategoriKegiatan: temp[i][2],
                 nik: temp[i][5],
@@ -938,7 +939,7 @@ const Main = () => {
 
         for (let i = 1; i < temp.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: temp[i][1],
                 kategoriKegiatan: temp[i][2],
                 deskKegiatan: temp[i][5],
@@ -960,7 +961,7 @@ const Main = () => {
 
         for (let i = 1; i < temp.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: temp[i][1],
                 kategoriKegiatan: temp[i][2],
                 jmlMhs: temp[i][5],
@@ -983,7 +984,7 @@ const Main = () => {
 
         for (let i = 1; i < temp.length; i++) {
             hasil.push({
-                key:i,
+                key: i,
                 no: temp[i][1],
                 kategoriKegiatan: temp[i][2],
                 namaKegiatan: temp[i][5],
@@ -999,12 +1000,24 @@ const Main = () => {
         return hasil;
     }
 
+    const [messageApi, contextHolder] = message.useMessage();
+
     const handleUpload = async (file) => {
         const ab = await file.arrayBuffer();
         const wb = read(ab);
         const ws = wb.Sheets[wb.SheetNames[0]];
 
         const data = utils.sheet_to_json(ws, { header: 1 });
+
+        if (data[0][1] !== "BIDANG A: PENDIDIKAN \r\nDAN PENGAJARAN" || data[9][1] !== 'A1A' || data[186][1] !== 'A11') {
+            messageApi.open({
+                type: 'error',
+                content: 'Pastikan file yang dimasukkan sudah benar',
+            });
+            return;
+        }
+
+        console.log(data);
 
         let tempData = {
             // A1A
@@ -1066,26 +1079,37 @@ const Main = () => {
         return false;
     };
 
+    let Total = <></>
+    if(showTotal === true){
+        Total = <Table columns = {tableColumns[dataChosen]} dataSource={datas[dataChosen]}></Table>
+    }
+    else{
+        Total = <></>
+    }
+
     return (
         <>
-            <Space
-                direction="horizontal"
-                style={{
-                    width: ''
-                }}
-                size="large"
-            >
-                <Upload
-                    action="https://localhost:3000/"
-                    listType="text"
-                    maxCount={1}
-                    accept='.xlsx'
-                    beforeUpload={handleUpload}
-                    showUploadList={{showRemoveIcon:false}}
+            {contextHolder}
+            <div id='upload'>
+                <Space
+                    direction="horizontal"
+                    style={{
+                        width: ''
+                    }}
+                    size="large"
                 >
-                    <Button icon={<UploadOutlined />}>Upload di sini</Button>
-                </Upload>
-            </Space>
+                    <Upload
+                        action="https://localhost:3000/"
+                        listType="text"
+                        maxCount={1}
+                        accept='.xlsx'
+                        beforeUpload={handleUpload}
+                        showUploadList={{ showRemoveIcon: false }}
+                    >
+                        <Button icon={<UploadOutlined />}>Upload di sini</Button>
+                    </Upload>
+                </Space>
+            </div>
 
             <div id='Laporan'>
                 <p>Pilih data : </p>
@@ -1096,6 +1120,12 @@ const Main = () => {
                     }}
                     onChange={(value) => {
                         setDataChosen(value);
+                        if (dataChosen === 'A7') {
+                            setShowTotal(false);
+                        }
+                        else {
+                            setShowTotal(true);
+                        }
                     }}
                     options={[
                         {
@@ -1148,6 +1178,8 @@ const Main = () => {
                         }
                     ]}
                 />
+                
+                {Total}
                 <Table columns={tableColumns[dataChosen]} dataSource={datas[dataChosen]} bordered virtual scroll={{ x: 700, y: 500 }}></Table>
             </div>
         </>

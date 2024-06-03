@@ -47,4 +47,12 @@ html , body , #root{
 
 #Laporan{
   height: 100%;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+#upload{
+  justify-content: center;
+  display:inline-flex;
+  align-items: center;
 }

@@ -1291,7 +1291,7 @@ const Main = () => {
     const getTotal = () => {
         let Total = <></>
         if (showTotal === true) {
-            Total = <Table columns={tableColumns['total' + dataChosen]} dataSource={datas['total' + dataChosen]}></Table>
+            Total = <Table columns={tableColumns['total' + dataChosen]} dataSource={datas['total' + dataChosen]} size='small' pagination={{ position : ['none','none']}} style={{marginBottom: '16px'}}></Table>
         }
         else {
             Total = <></>
@@ -1477,6 +1477,7 @@ const Main = () => {
     return (
         <>
             {contextHolder}
+
             <div id='upload'>
                 <Space
                     direction="horizontal"
@@ -1492,6 +1493,7 @@ const Main = () => {
                         accept='.xlsx'
                         beforeUpload={handleUpload}
                         showUploadList={{ showRemoveIcon: false }}
+                        
                     >
                         <Button icon={<UploadOutlined />}>Upload di sini</Button>
                     </Upload>

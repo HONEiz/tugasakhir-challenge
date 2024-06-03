@@ -1,4 +1,5 @@
 
+//Header component
 const Header = ()=>{
     return (
         <div id='Header'>
